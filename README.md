@@ -225,6 +225,49 @@ __________________________________
       }
 }
 ```
+__________________________________
+## Check Quantity Proxy
+- Url: https://1proxy.net/api/dashboard
+
+- Headers:
+```
+{
+  "Accept":"application/json",
+  "Authorization": "Bearer your-token"
+}
+```
+
+- Response:
+```
+{
+    "status": "SUCCESS",
+    "statusCode": 200,
+    "data": {
+        "count": {
+            "total_ssh": 0,
+            "total_http": 17681,
+            "total_socks": 3297,
+            "total_by_geo_local": {
+                "us": {
+                    "count": 2152,
+                    "label": "United States"
+                },
+                "vn": {
+                    "count": 16978,
+                    "label": "Viet Nam"
+                },
+                "unknown": {
+                    "label": "Ch\u01b0a x\u00e1c \u0111\u1ecbnh",
+                    "count": 28
+                }
+            }
+        },
+        "orders": null
+    }
+}
+```
+
+
 
 __________________________________
 
