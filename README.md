@@ -1,5 +1,7 @@
 ## Login API:
 
+- Method: GET
+
 - Url: https://1proxy.net/api/auth/login
 
 - Json body: 
@@ -30,6 +32,8 @@
 __________________________________
 
 ## GET PLAN:
+
+- Method: GET
 
 - Url: https://1proxy.net/api/user-plans
 
@@ -166,6 +170,8 @@ __________________________________
 
 ## GET GEOLOCAL
 
+- Method: GET
+
 - Url: https://1proxy.net/api/geos?is_show_inactive=0
 
 - Headers:
@@ -201,6 +207,9 @@ __________________________________
 
 
 ## Check Budget:
+
+- Method: GET
+
 - Url: https://1proxy.net/api/payments/budget
 
 - Headers:
@@ -227,6 +236,9 @@ __________________________________
 ```
 __________________________________
 ## Check Quantity Proxy
+
+- Method: GET
+
 - Url: https://1proxy.net/api/dashboard
 
 - Headers:
@@ -272,7 +284,9 @@ __________________________________
 __________________________________
 
 
-## BUY Proxy
+## BUY Proxy / Get List Orders
+
+- Method: POST/GET
 
 - Url: https://1proxy.net/api/orders
 
@@ -433,7 +447,87 @@ __________________________________
                 }
             }
         }
-    ]
+```
+________________________
+
+## Get Proxy:
+
+- Method: GET
+
+- Url: https://1proxy.net/api/premium/list-proxy?key=[KEY_API]&limit=1000
+
+- Response:
+```
+{
+  "status": "SUCCESS",
+  "statusCode": 200,
+  "data": [
+	{
+	"ip": "171.240.180.140",
+      "port": 61820,
+      "geo_local": "VN",
+      "ms": "4987",
+      "type": "RHTTP",
+      "is_vip": 1,
+      "username": "admin",
+      "password": "test",
+      "status": "LIVE",
+      "ip_public": "171.240.177.157",
+      "created_at": "2024-06-06T09:49:50.000000Z",
+      "updated_at": "2024-06-06T10:03:16.000000Z"
+    }
+  ],
+  "total": 1
 }
 
 ```
+__________________________________
+
+
+## Get Proxy Residential :
+
+- Method: GET
+
+- Url: https://1proxy.net/api/dashboard/RHTTP&geo=VN
+
+- Response:
+```
+{
+  "status": "SUCCESS",
+  "statusCode": 200,
+  "data": [
+    {
+      "id": 2838495,
+      "geo_local": "VN",
+      "ms": "1252",
+      "type": "RHTTP",
+      "description": null,
+      "created_at": "2024-05-17T10:13:08.000000Z",
+      "updated_at": "2024-06-06T10:03:02.000000Z",
+      "is_vip": 1,
+      "status": "LIVE",
+      "ip_public": "116.101.221.38",
+      "ips": "Viettel Corporation",
+      "city": "Vĩnh Phúc Province"
+    },
+    {
+      "id": 2848555,
+      "geo_local": "VN",
+      "ms": "496",
+      "type": "RHTTP",
+      "description": null,
+      "created_at": "2024-05-18T20:46:07.000000Z",
+      "updated_at": "2024-06-06T10:02:51.000000Z",
+      "is_vip": 1,
+      "status": "LIVE",
+      "ip_public": "117.5.147.53",
+      "ips": "Viettel Corporation",
+      "city": "Hanoi"
+    },
+...
+  ],
+  "count": 613
+}
+
+```
+__________________________________
